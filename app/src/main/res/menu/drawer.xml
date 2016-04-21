@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/settings"
+          android:title="@string/settings"
+          android:icon="@drawable/ic_settings"/>
+
+    <item android:id="@+id/dictionaries"
+          android:title="@string/dictionaries"
+          android:icon="@drawable/ic_language"/>
+
+    <item android:id="@+id/feedback"
+          android:title="@string/feedback"
+          android:icon="@drawable/ic_feedback"/>
+
+</menu>
