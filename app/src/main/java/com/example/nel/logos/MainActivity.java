@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
@@ -66,10 +67,10 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.search, menu);
 
         MenuItem mi = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(mi);
-
+        SearchView sv = (SearchView) MenuItemCompat.getActionView(mi);
         SearchManager sm = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView.setSearchableInfo(sm.getSearchableInfo(getComponentName()));
+
+        sv.setSearchableInfo(sm.getSearchableInfo(getComponentName()));
 
         return true;
     }
