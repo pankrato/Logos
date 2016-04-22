@@ -19,6 +19,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final int WORD_LOADER_ID = 0;
+    public static final String QUERY_KEY = "query";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +50,11 @@ public class MainActivity extends AppCompatActivity
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
 
-            Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT)
-            .show();
+            Bundle bundle = new Bundle();
+            bundle.putString(QUERY_KEY, query);
+
+            LogosLoaderCallbacks lcb = new LogosLoaderCallbacks(this);
+            getLoaderManager().restartLoader(WORD_LOADER_ID, bundle, lcb);
         }
     }
 
