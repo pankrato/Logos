@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView nv = (NavigationView) findViewById(R.id.nav_view);
         nv.setNavigationItemSelectedListener(this);
+
         handleIntent(getIntent());
     }
 

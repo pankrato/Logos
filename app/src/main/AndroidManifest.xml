@@ -23,6 +23,9 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.example.nel.logos.offlinewiktionary.contentprovider.Provider"
+            android:name=".offlinewiktionary.contentprovider.Provider" />
     </application>
 
 </manifest>
